@@ -10,10 +10,10 @@ attr_reader :id
 
   def self.create_table
     sql = <<-SQL
-      create table if not exists songs (
+      create table if not exists students (
         id INTEGER PRIMARY KEY,
         name TEXT,
-        album TEXT
+        grade TEXT
         );
         SQL
     DB[:conn].execute(sql)
