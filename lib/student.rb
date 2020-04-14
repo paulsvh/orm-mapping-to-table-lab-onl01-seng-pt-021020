@@ -14,15 +14,21 @@ def self.create_table
       id INTEGER PRIMARY KEY,
       name TEXT,
       album TEXT
-      )
+    );
       SQL
     DB[:conn].execute(sql)
 end
 
+def self.drop_table
+  sql = <<-SQL
+    drop table ?;
+    SQL
+    DB[:conn].execute(sql, self)
+  end
 
 
 end
 
 
 # Remember, you can access your database connection anywhere in this class
-#  with DB[:conn]  
+#  with DB[:conn]
